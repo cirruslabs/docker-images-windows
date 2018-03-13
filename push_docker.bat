@@ -1,3 +1,5 @@
+@echo off
+
 IF "%$CIRRUS_BRANCH%" == "master" GOTO NOTMASTER
 :YESPATH
 
