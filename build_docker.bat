@@ -1,1 +1,1 @@
-docker build --tag cirrusci/windowsservercore:1709 windowsservercore
+docker build --tag cirrusci/windowsservercore:2016 windowsservercore
