@@ -1,6 +1,6 @@
 @echo off
 
-IF "%$CIRRUS_BRANCH%" == "master" GOTO NOTMASTER
+IF not "%CIRRUS_BRANCH%" == "master" GOTO NOTMASTER
 :YESPATH
 
 docker login --username "%DOCKER_USER_NAME%" --password "%DOCKER_PASSWORD%"
