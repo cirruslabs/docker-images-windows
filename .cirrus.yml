@@ -6,6 +6,5 @@ environment:
 
 windows_docker_builder:
   platform: windows
-  os_version: 2016
   build_script: build_docker.bat
   push_script: push_docker.bat
