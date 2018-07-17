@@ -6,5 +6,6 @@ environment:
 
 windows_docker_builder:
   platform: windows
+  pull_script: docker pull microsoft/windowsservercore:ltsc2016
   build_script: build_docker.bat
   push_script: push_docker.bat
