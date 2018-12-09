@@ -1,11 +1,4 @@
-environment:
-  AZURE_USER_NAME: ENCRYPTED[0034bf3ce5c550f75d3ce38a4b059e393226b6cf007ef5aa4d71efc80bc5b1606ed3dc1505df9a2fc5e57b8d18c8152e]
-  AZURE_PASSWORD: ENCRYPTED[e5f5d08b440f97f44653125fafdb2bb11da37e01ae76b51af7ec66f4ef25c9c02266385ed5b86c80713a1587abcff9ee]
-  DOCKER_USER_NAME: ENCRYPTED[2d3c61df8b436a826fb1718d75ba3f9da9111f764a5dd0428b9eedfeb2d7a54945071bc0dc6570e0f2a183aff776db3a]
-  DOCKER_PASSWORD: ENCRYPTED[7f03385623a29b5da5853b10e4d0cf615b0eb9ba64a72bb6364bac2af2296620f0fcb2b61834594494a7528e53321cc9]
-
 windows_docker_builder:
   platform: windows
   pull_script: docker pull microsoft/windowsservercore:ltsc2016
   build_script: build_docker.bat
-  push_script: push_docker.bat
