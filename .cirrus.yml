@@ -4,6 +4,7 @@ environment:
 
 windows_docker_builder:
   platform: windows
+  os_version: 2019
   pull_script: docker pull mcr.microsoft.com/windows/servercore:ltsc2019
   build_script: build_docker.bat
   push_script: push_docker.bat
