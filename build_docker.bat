@@ -1,1 +1,1 @@
-docker build --tag cirrusci/windowsservercore:2016 --tag cirrusci.azurecr.io/cirrusci/windowsservercore:2016 windowsservercore
+docker build --tag cirrusci/windowsservercore:2019 windowsservercore
