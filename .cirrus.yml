@@ -9,4 +9,5 @@ windows_docker_builder:
   os_version: 2019
   pull_script: docker pull mcr.microsoft.com/windows/servercore:ltsc2019
   build_script: build_docker.bat
+  images_script: docker images cirrusci
   push_script: push_docker.bat
