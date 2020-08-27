@@ -2,11 +2,12 @@ environment:
   DOCKER_USER_NAME: ENCRYPTED[2d3c61df8b436a826fb1718d75ba3f9da9111f764a5dd0428b9eedfeb2d7a54945071bc0dc6570e0f2a183aff776db3a]
   DOCKER_PASSWORD: ENCRYPTED[7f03385623a29b5da5853b10e4d0cf615b0eb9ba64a72bb6364bac2af2296620f0fcb2b61834594494a7528e53321cc9]
 
-timeout_in: 2h
-
 windows_docker_builder:
   platform: windows
   os_version: 2019
+  env:
+    COMPUTE_ENGINE_IMAGE_NAME: windows-docker-builder-v20200813
   pull_script: docker pull mcr.microsoft.com/windows/servercore:ltsc2019
-  build_script: build_docker.bat
+  build_core_script: docker build --tag cirrusci/windowsservercore:2019 windowsservercore
+  build_cmake_script: docker build --tag cirrusci/windowsservercore:cmake contrib/cmake
   push_script: push_docker.bat
