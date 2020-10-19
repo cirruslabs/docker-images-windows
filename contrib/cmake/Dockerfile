@@ -9,4 +9,4 @@ RUN choco install -y --no-progress --installargs 'ADD_CMAKE_TO_PATH=System' \
     visualstudio2019buildtools \
     mingw \
     cmake \
-    msys2 || refreshenv
+    msys2 || echo %errorlevel%
