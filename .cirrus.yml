@@ -5,6 +5,7 @@ environment:
 windows_docker_builder:
   platform: windows
   os_version: 2019
+  timeout_in: 2h
   env:
     COMPUTE_ENGINE_IMAGE_NAME: windows-docker-builder-v20200813
   pull_script: docker pull mcr.microsoft.com/windows/servercore:ltsc2019
