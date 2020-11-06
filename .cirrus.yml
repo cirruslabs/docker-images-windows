@@ -9,5 +9,6 @@ windows_docker_builder:
     COMPUTE_ENGINE_IMAGE_NAME: windows-docker-builder-v20200813
   pull_script: docker pull mcr.microsoft.com/windows/servercore:ltsc2019
   build_core_script: docker build --tag cirrusci/windowsservercore:2019 windowsservercore
+  build_vs_script: docker build --tag cirrusci/windowsservercore:vs2019 contrib/vs2019
   build_cmake_script: docker build --tag cirrusci/windowsservercore:cmake contrib/cmake
   push_script: push_docker.bat
