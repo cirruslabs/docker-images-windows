@@ -12,4 +12,5 @@ windows_docker_builder:
   build_core_script: docker build --tag cirrusci/windowsservercore:2019 windowsservercore
   build_vs_script: docker build --tag cirrusci/windowsservercore:vs2019 contrib/vs2019
   build_cmake_script: docker build --tag cirrusci/windowsservercore:cmake contrib/cmake
+  build_mingw_script: docker build --tag cirrusci/windowsservercore:mingw contrib/mingw
   push_script: push_docker.bat

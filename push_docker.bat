@@ -7,6 +7,7 @@ docker login --username "%DOCKER_USER_NAME%" --password "%DOCKER_PASSWORD%"
 docker push cirrusci/windowsservercore:2019
 docker push cirrusci/windowsservercore:vs2019
 docker push cirrusci/windowsservercore:cmake
+docker push cirrusci/windowsservercore:mingw
 
 GOTO END
 :NOTMASTER
