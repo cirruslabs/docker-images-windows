@@ -11,4 +11,4 @@ RUN powershell -NoLogo -NoProfile -Command \
     choco install -y --no-progress visualstudio2019buildtools visualstudio2019-workload-vctools
 
 RUN powershell -NoLogo -NoProfile -Command \
-    choco install -y --no-progress --installargs 'ADD_CMAKE_TO_PATH=System' mingw cmake msys2 || echo "ignore reboot request"
+    choco install -y --no-progress --installargs 'ADD_CMAKE_TO_PATH=System' mingw cmake
