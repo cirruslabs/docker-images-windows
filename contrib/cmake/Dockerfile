@@ -12,3 +12,5 @@ RUN powershell -NoLogo -NoProfile -Command \
 
 RUN powershell -NoLogo -NoProfile -Command \
     choco install -y --no-progress --installargs 'ADD_CMAKE_TO_PATH=System' mingw cmake
+    Remove-Item C:\ProgramData\chocolatey\logs\*.* -Force -Recurse ; \
+    Remove-Item C:\Users\ContainerAdministrator\AppData\Local\Temp\*.* -Force -Recurse
