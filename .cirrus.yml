@@ -5,8 +5,7 @@ environment:
 windows_docker_builder:
   platform: windows
   os_version: 2019
-  env:
-    COMPUTE_ENGINE_IMAGE_NAME: windows-docker-builder-v20200813
+  info_script: docker info
   pull_script: docker pull mcr.microsoft.com/windows/servercore:ltsc2019
   build_core_script: docker build --tag cirrusci/windowsservercore:2019 windowsservercore
   build_cmake_script: docker build --tag cirrusci/windowsservercore:cmake contrib/cmake
