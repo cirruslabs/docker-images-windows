@@ -1,14 +1,15 @@
+# !IMPORTANT!
+# * Pass -m 2GB (or more) when building the image.
+# * Configure Docker to use disks larger than the default 20 GB.
 FROM cirrusci/windowsservercore:2019
 
-# Microsoft .NET Framework 4.8 4.8.0.20190930 is broken and causes the
-# installation of visualstudio2019-workload-vctools to fail. To workaround
-# the issue request Microsoft .NET Framework 4.7.2.20180712 instead, which
-# is already installed and thus speeds up installation as well.
 RUN powershell -NoLogo -NoProfile -Command \
-    choco install -y --no-progress dotnetfx --version 4.7.2.20180712
+    choco feature disable -n=usePackageExitCodes ; \
+    choco install -y --no-progress --version=16.8.2.0 visualstudio2019buildtools ; \
+    choco install -y --no-progress --version=1.0.0 visualstudio2019-workload-vctools --parameters="--includeOptional"
 
 RUN powershell -NoLogo -NoProfile -Command \
-    choco install -y --no-progress visualstudio2019buildtools visualstudio2019-workload-vctools
-
-RUN powershell -NoLogo -NoProfile -Command \
-    choco install -y --no-progress --installargs 'ADD_CMAKE_TO_PATH=System' mingw cmake
+    choco install -y --no-progress cmake --install-arguments="ADD_CMAKE_TO_PATH=System" ; \
+    choco install -y --no-progress mingw ; \
+    Remove-Item C:\ProgramData\chocolatey\logs\*.* -Force -Recurse ; \
+    Remove-Item C:\Users\ContainerAdministrator\AppData\Local\Temp\*.* -Force -Recurse
