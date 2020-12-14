@@ -9,7 +9,12 @@ RUN powershell -NoLogo -NoProfile -Command \
     Remove-Item C:\ProgramData\chocolatey\logs\*.* -Force -Recurse ; \
     Remove-Item C:\Users\ContainerAdministrator\AppData\Local\Temp\*.* -Force -Recurse
     
-    
+RUN powershell -NoLogo -NoProfile -Command \
+    choco feature disable -n=usePackageExitCodes ; \
+    choco install -y --no-progress --version=1.0.0 visualstudio2019-workload-vctools ; \
+    Remove-Item C:\ProgramData\chocolatey\logs\*.* -Force -Recurse ; \
+    Remove-Item C:\Users\ContainerAdministrator\AppData\Local\Temp\*.* -Force -Recurse
+
 RUN powershell -NoLogo -NoProfile -Command \
     choco feature disable -n=usePackageExitCodes ; \
     choco install -y --no-progress --version=1.0.0 visualstudio2019-workload-vctools --parameters="--includeOptional" ; \
