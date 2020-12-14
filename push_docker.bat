@@ -1,5 +1,8 @@
 @echo off
 
+docker history cirrusci/windowsservercore:2019
+docker history cirrusci/windowsservercore:cmake
+
 IF not "%CIRRUS_BRANCH%" == "master" GOTO NOTMASTER
 :YESPATH
 
