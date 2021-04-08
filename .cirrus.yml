@@ -10,5 +10,6 @@ windows_docker_builder:
   info_script: docker info
   pull_script: docker pull mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2019
   build_core_script: docker build -m 2GB --tag cirrusci/windowsservercore:2019 windowsservercore
+  build_visualstudio_script: docker build -m 2GB --tag cirrusci/windowsservercore:visualstudio2019 contrib/visualstudio2019
   build_cmake_script: docker build -m 2GB --tag cirrusci/windowsservercore:cmake contrib/cmake
   push_script: push_docker.bat
