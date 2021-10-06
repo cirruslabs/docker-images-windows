@@ -6,11 +6,13 @@ FROM cirrusci/windowsservercore:2019
 RUN powershell -NoLogo -NoProfile -Command \
     choco feature disable -n=usePackageExitCodes ; \
     choco install -y --no-progress visualstudio2019buildtools ; \
-    Remove-Item C:\ProgramData\chocolatey\logs\*.* -Force -Recurse ; \
-    Remove-Item C:\Users\ContainerAdministrator\AppData\Local\Temp\*.* -Force -Recurse
+    Remove-Item C:\ProgramData\chocolatey\logs\* -Force -Recurse ; \
+    Remove-Item $Env:localappdata\Nuget\Cache\*nupkg ; \
+    Remove-Item $Env:temp\* -Force -Recurse
 
 RUN powershell -NoLogo -NoProfile -Command \
     choco feature disable -n=usePackageExitCodes ; \
     choco install -y --no-progress visualstudio2019-workload-vctools --package-parameters "--includeOptional" ; \
-    Remove-Item C:\ProgramData\chocolatey\logs\*.* -Force -Recurse ; \
-    Remove-Item C:\Users\ContainerAdministrator\AppData\Local\Temp\*.* -Force -Recurse
+    Remove-Item C:\ProgramData\chocolatey\logs\* -Force -Recurse ; \
+    Remove-Item $Env:localappdata\Nuget\Cache\*nupkg ; \
+    Remove-Item $Env:temp\* -Force -Recurse
