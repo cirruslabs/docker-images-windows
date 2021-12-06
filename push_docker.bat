@@ -8,9 +8,7 @@ IF not "%CIRRUS_BRANCH%" == "master" GOTO NOTMASTER
 :YESPATH
 
 docker login --username "%DOCKER_USER_NAME%" --password "%DOCKER_PASSWORD%"
-docker push cirrusci/windowsservercore:2019
-docker push cirrusci/windowsservercore:visualstudio2019
-docker push cirrusci/windowsservercore:cmake
+docker push --all-tags cirrusci/windowsservercore
 
 GOTO END
 :NOTMASTER

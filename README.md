@@ -1,8 +1,7 @@
-# docker-images-windows
+# Common Windows Docker Images for Cirrus CI
 
-Base WindowsDocker images for Cirrus CI.
+Common [Windows docker images](https://hub.docker.com/r/cirrusci/windowsservercore/tags) for Cirrus CI
+that are pre-cached on the machines. 
 
-Since Cirrus CI builds are executed on Google Cloud Platform we need to comply with GCP's restrictions. For example
-[GCP doesn't support the default MTU][1] of 1500 so we need to change it to the maximum possible 1460.
-
-[1]: https://cloud.google.com/compute/docs/containers/#additional_setup_steps
+Note: Please use a `-<year>.<month>` tag in your Dockerfiles when using with [Dockerfile as a CI environment](https://cirrus-ci.org/guide/docker-builder-vm/#dockerfile-as-a-ci-environment)
+feature. All tags not older than 1 year will be precached on the machines which will increase cache hit rate and startup speed.
