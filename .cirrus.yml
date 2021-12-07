@@ -13,7 +13,7 @@ windows_docker_builder:
   build_core_script: docker build -m 2GB --tag cirrusci/windowsservercore:2019 --tag cirrusci/windowsservercore:2019-%CIRRUS_TAG% windowsservercore
   build_visualstudio_script: docker build -m 2GB --tag cirrusci/windowsservercore:visualstudio2019 --tag cirrusci/windowsservercore:visualstudio2019-%CIRRUS_TAG% contrib/visualstudio2019
   build_cmake_script: docker build -m 2GB --tag cirrusci/windowsservercore:cmake --tag cirrusci/windowsservercore:cmake-%CIRRUS_TAG% contrib/cmake
-  mstrix:
+  matrix:
     - name: Push
       only_if: $CIRRUS_TAG != ''
       push_script: push_docker.bat
