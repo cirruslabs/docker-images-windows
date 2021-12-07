@@ -8,7 +8,7 @@ IF "%CIRRUS_TAG%" == "" GOTO NOTTAG
 :YESPATH
 
 docker login --username "%DOCKER_USER_NAME%" --password "%DOCKER_PASSWORD%"
-docker push cirrusci/windowsservercore --all-tags
+docker push cirrusci/windowsservercore
 
 GOTO END
 :NOTTAG
