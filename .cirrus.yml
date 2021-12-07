@@ -8,7 +8,9 @@ windows_docker_builder:
   use_compute_credits: true
   platform: windows
   os_version: 2019
-  info_script: docker info
+  info_script:
+    - docker version
+    - docker info
   pull_script: docker pull mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2019
   build_core_script: docker build -m 2GB --tag cirrusci/windowsservercore:2019 --tag cirrusci/windowsservercore:2019-%CIRRUS_TAG% windowsservercore
   build_visualstudio_script: docker build -m 2GB --tag cirrusci/windowsservercore:visualstudio2019 --tag cirrusci/windowsservercore:visualstudio2019-%CIRRUS_TAG% contrib/visualstudio2019
