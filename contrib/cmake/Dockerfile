@@ -1,7 +1,7 @@
 # !IMPORTANT!
 # * Pass -m 2GB (or more) when building the image.
 # * Configure Docker to use disks larger than the default 20 GB.
-FROM cirrusci/windowsservercore:visualstudio2019
+FROM cirrusci/windowsservercore:visualstudio2022
 
 RUN powershell -NoLogo -NoProfile -Command \
     choco install -y --no-progress cmake --install-arguments="ADD_CMAKE_TO_PATH=System" ; \

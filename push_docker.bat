@@ -1,7 +1,7 @@
 @echo off
 
 docker history cirrusci/windowsservercore:2019
-docker history cirrusci/windowsservercore:visualstudio2019
+docker history cirrusci/windowsservercore:visualstudio2022
 docker history cirrusci/windowsservercore:cmake
 
 IF "%CIRRUS_TAG%" == "" GOTO NOTTAG
